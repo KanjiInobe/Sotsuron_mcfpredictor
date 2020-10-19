@@ -374,8 +374,9 @@ classdef ShapePredictor
                 omega (Numeric): Omega, angle of core at the sition.
             %}
             
-            torsionAngle = [0 cumsum(saot(1,1:end-1).*diff(s))];
-            disp(torsionAngle);
+%              torsionAngle = [0 cumsum(saot(1,1:end-1).*diff(s))];
+            torsionAngle = s * [0];
+
             omega = transpose(initialAngle) + 2*pi*s.*pitch + torsionAngle;
         end
         
